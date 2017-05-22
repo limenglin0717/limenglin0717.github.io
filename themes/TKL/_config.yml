@@ -27,14 +27,14 @@ duoshuo:
 disqus_shortname:
 
 #fancybox
-fancybox: true
+fancybox: false
 
 # Miscellaneous
 github: https://github.com/limenglin0717
 twitter: https://twitter.com/
 facebook: https://www.facebook.com/
 google: https://google.com/
-weibo: http://weibo.com/
+weibo: http://weibo.com/CSLBL?refer_flag=1001030201_
 
 #about  timeline
 timeline:

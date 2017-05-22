@@ -2,7 +2,7 @@
 title: 利用sinopia搭建npm私服
 date: 2017-05-14 09:16:11
 tags: npm
-categories: npm
+categories: 服务器搭建
 ---
 
 相信大家在合作开发的时候，或者项目稍微大一些的时候，总会遇到npm各种各样的问题，可能慢，可能卡，可能失败
@@ -26,7 +26,7 @@ categories: npm
 >warn  --- http address - http://localhost:4873/
 然后打开：http://localhost:4873/
 
-你需要找到sinopia在你电脑上的安装目录，然后会发现目录下默认有两个文件：config.yaml和storage ，htpasswd 是添加用户之后自动创建的。
+你需要找到sinopia在你电脑上的安装目录(*windows系统的在"C:\Users\yourself\AppData\Roaming\sinopia",其中AppData是个隐藏文件*)，然后会发现目录下默认有两个文件：config.yaml和storage ，htpasswd 是添加用户之后自动创建的。
 
 config.yaml就是配置文件啦
 

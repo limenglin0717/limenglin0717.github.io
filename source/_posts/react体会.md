@@ -10,14 +10,14 @@ react，去年开始在人们耳朵里越来越响亮，如今，小白终于在
 
 ## react项目目录框架
 
-![](../image/react项目目录.png "项目目录")
+![](./react体会/react项目目录.png "项目目录")
 
  其中：
 * data是放置静态数据的
 * fonts是字体
 * js是放页面，组件和路由（还有reflux的action和store）
 
-  ![](../image/react目录组件.png "项目目录")
+  ![](./react体会/react目录组件.png "项目目录")
   
   在js目录下的component是放组件,该组件目录下包括一个index.js和一个index.scss
 
@@ -29,11 +29,11 @@ react，去年开始在人们耳朵里越来越响亮，如今，小白终于在
 
 * 每个目录下都有一个index.js
 
-  ![](../image/react项目目录container.png "项目目录")
+  ![](./react体会/react项目目录container.png "项目目录")
 
   这里展示container文件夹中的index
 
-  ![](../image/reactContainerIndex.png "项目目录")
+  ![](./react体会/reactContainerIndex.png "项目目录")
 
   将该文件中的所有子文件抛出
 
@@ -54,7 +54,7 @@ react，去年开始在人们耳朵里越来越响亮，如今，小白终于在
 
 ## 表单组件
 
-  ![](../image/modalform.png "项目目录")
+  ![](./react体会/modalform.png "项目目录")
   
   对于这个表单来说，在组件外需要传入的值有
   ```
