@@ -3,7 +3,7 @@ title: 初识Mobx
 date: 2017-06-29 11:05:59
 tags: mobx
 categories: flux
---- 
+---
 Mobx是一个在redux之后出来的状态管理库，它比redux更清楚而且更易上手，因为redux在我看来繁杂，难受,而mobx简直是短小精悍啊！！！
 
 ## 那mobx的思想是什么呢？
