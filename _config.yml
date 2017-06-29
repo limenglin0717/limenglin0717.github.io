@@ -4,10 +4,10 @@
 
 # Site
 title: TbestLBL
-subtitle:
-description:
+subtitle: 和前端生活的那些日子
+description: 前端个人技术博客
 author: LiMengLin
-language:
+language: zh-CN
 timezone:
 
 # URL
@@ -26,6 +26,8 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - README.md 
+  - baidu_verify_IIJFGFbbEX.html 
 
 # Writing
 new_post_name: :title.md # File name of new posts

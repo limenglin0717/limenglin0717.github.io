@@ -52,7 +52,7 @@ categories: 服务器搭建
     ```
 3. tomcat把他解压安装到自己喜欢的一个目录下，目录结构应该是这样的：
 
-    ![](./阿里RAP服务器搭建/tomcatFile.png "tomcat目录结构")
+    ![](./阿里RAP服务器搭建/tomcatFile1.png "tomcat目录结构")
 
     这里说几个稍微要知道的文件夹
 
@@ -68,11 +68,11 @@ categories: 服务器搭建
 
       将下载的 redis-2.4.5-win32-win64.zip 包解压到自己喜爱的一个目录下
       
-      ![](./阿里RAP服务器搭建/redisFile.png "redis目录结构")
+      ![](./阿里RAP服务器搭建/redisFile1.png "redis目录结构")
 
       这是redis的根目录文件，选择与自己机器相对应的（32或34位）
 
-      ![](./阿里RAP服务器搭建/redis64File.png "redis目录结构")
+      ![](./阿里RAP服务器搭建/redis64File1.png "redis目录结构")
 
       **<font color="red">注意：</font>** 这里有个坑的地方就是 redis一定要设置密码！！
       
@@ -88,12 +88,12 @@ categories: 服务器搭建
       ```
       redis-cli.exe -h 127.0.0.1 -p 6379
       ```
-      ![](./阿里RAP服务器搭建/cmd.png "redis目录结构")
+      ![](./阿里RAP服务器搭建/cmd1.png "redis目录结构")
 
       出现了这样的界面，说明你的redis安装成功了~！
         
 4. RAP包下载
-    ![](./阿里RAP服务器搭建/rapDownload.png  "rapDownloadPng")
+    ![](./阿里RAP服务器搭建/rapDownload1.png  "rapDownloadPng")
     
     下载这个WAR包，然后修改里面的*src\main\resources\config.properties*
 
@@ -112,7 +112,7 @@ categories: 服务器搭建
 
     然后把这个WAR包改名为ROOT.war，丢到tomcat的webapp的目录下（与ROOT文件同级）
 
-    ![](./阿里RAP服务器搭建/war包.png  "war包")
+    ![](./阿里RAP服务器搭建/war包1.png  "war包")
 
 5. mySql建表
 
@@ -120,7 +120,7 @@ categories: 服务器搭建
 
     这是数据库建表的sql语句，所以可以打开我们的mySql的可视化工具Navicat，运行此sql文件，然后刷新一下
 
-    ![](./阿里RAP服务器搭建/mySqlDB.png  "rapDownloadPng")
+    ![](./阿里RAP服务器搭建/mySqlDB1.png  "rapDownloadPng")
 
     就可以看到这些表了
 
@@ -148,7 +148,7 @@ redis-cli.exe -h 127.0.0.1 -p 6379
 
 感叹一声： <font color="red">**完美！** </font>
 
-![](./阿里RAP服务器搭建/xiaoren.png "hello word")
+![](./阿里RAP服务器搭建/xiaoren1.png "hello word")
 
 
 

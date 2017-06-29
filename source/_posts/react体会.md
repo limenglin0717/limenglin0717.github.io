@@ -14,7 +14,7 @@ react，去年开始在人们耳朵里越来越响亮，如今，小白终于在
 
  其中：
 * data是放置静态数据的
-* fonts是字体
+* fonts是iconfonts（可有可无）
 * js是放页面，组件和路由（还有reflux的action和store）
 
   ![](./react体会/react目录组件.png "项目目录")
