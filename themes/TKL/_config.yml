@@ -14,11 +14,11 @@ rss: /
 highlightjs: vs
 
 #Works
-works:
-- works_name: javaScript
-  works_url: /
-- works_name: canvas画布
-  works_url: /categories/canvas
+# works:
+# - works_name: javaScript
+#   works_url: /
+# - works_name: canvas画布
+#   works_url: /categories/canvas
 
 #duoshuo name
 duoshuo:
@@ -31,10 +31,10 @@ fancybox: false
 
 # Miscellaneous
 github: https://github.com/limenglin0717
-twitter: https://twitter.com/
-facebook: https://www.facebook.com/
-google: https://google.com/
-weibo: http://weibo.com/CSLBL?refer_flag=1001030201_
+# twitter: https://twitter.com/
+# facebook: https://www.facebook.com/
+# google: https://google.com/
+# weibo: http://weibo.com/CSLBL?refer_flag=1001030201_
 
 #about  timeline
 timeline:
