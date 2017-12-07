@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>利用sinopia搭建npm私服 | TbestLBL</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="TbestLBL">
+    <meta name="author" content="TBEST">
+    <meta name="description" content="和前端生活的那些日子" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/" title="TbestLBL" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/CSS/" class="animsition-link">CSS<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/JavaScript/" class="animsition-link">JavaScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/canvas/" class="animsition-link">canvas<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/es6/" class="animsition-link">es6<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/flux/" class="animsition-link">flux<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/react/" class="animsition-link">react<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/前端安全/" class="animsition-link">前端安全<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/前端技术杂谈/" class="animsition-link">前端技术杂谈<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/服务器搭建/" class="animsition-link">服务器搭建<small>(2)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">TbestLBL</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/limenglin0717" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-05-14T01:16:11.000Z" itemprop="datePublished">
+          2017-05-14
+      </time>
+    
+    
+    | 
+    <a href='/tags/npm/'>npm</a>
+    
+    
+</span>
+                <h1>利用sinopia搭建npm私服</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>相信大家在合作开发的时候，或者项目稍微大一些的时候，总会遇到npm各种各样的问题，可能慢，可能卡，可能失败</p>
+<p>项目大的时候，你写的组件也可能不只是自己用，别的开发也需要统一用，所以一遍一遍的copy，不如一了百了把上面的问题也一起解决了</p>
+<p>我所在项目是因为有三个系统，最后要合并到一起，再一个是项目的保密性，在公司内局域网的时候，无法连接外部网络，所以npm无法正常使用。</p>
+<p>好了，废话不多说了，开始npm私服搭建：</p>
+<p>首先你需要准备好相应的环境</p>
+<ul>
+<li>node环境 <em>（去网上下载好）</em></li>
+<li>nrm <em>(npm 源管理器，这个非常方便 $ npm install -g nrm # 安装nrm)</em></li>
+<li>sinopia <em>一个非常方便的搭建npm私服的工具（npm install -g sinopia）</em></li>
+</ul>
+<blockquote>
+<p>$ sinopia</p>
+<p>warn  — config file  - …..\AppData\Roaming\sinopia\config.yaml</p>
+<p>warn  — http address - <a href="http://localhost:4873/" target="_blank" rel="external">http://localhost:4873/</a><br>然后打开：<a href="http://localhost:4873/" target="_blank" rel="external">http://localhost:4873/</a></p>
+</blockquote>
+<p>你需要找到sinopia在你电脑上的安装目录(<em>windows系统的在”C:\Users\yourself\AppData\Roaming\sinopia”,其中AppData是个隐藏文件</em>)，然后会发现目录下默认有两个文件：config.yaml和storage ，htpasswd 是添加用户之后自动创建的。</p>
+<p>config.yaml就是配置文件啦</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">#</div><div class="line"># This is the default config file. It allows all users to do anything,</div><div class="line"># so don&apos;t use it on production systems.</div><div class="line">#</div><div class="line"># Look here for more config file examples:</div><div class="line"># https://github.com/rlidwka/sinopia/tree/master/conf</div><div class="line">#</div><div class="line"></div><div class="line"># path to a directory with all packages</div><div class="line">storage: ./storage  //npm包存放的路径</div><div class="line"></div><div class="line">auth:</div><div class="line">  htpasswd:</div><div class="line">    file: ./htpasswd   //保存用户的账号密码等信息</div><div class="line">    # Maximum amount of users allowed to register, defaults to &quot;+inf&quot;.</div><div class="line">    # You can set this to -1 to disable registration.</div><div class="line">    max_users: -1  //默认为1000，改为-1，禁止注册</div><div class="line"></div><div class="line"># a list of other known repositories we can talk to</div><div class="line">uplinks:</div><div class="line">  npmjs:</div><div class="line">    url: http://registry.npm.taobao.org/  //默认为npm的官网</div><div class="line">    </div><div class="line">packages:  //配置权限管理</div><div class="line">  &apos;@*/*&apos;:</div><div class="line">    # scoped packages</div><div class="line">    access: $all</div><div class="line">    publish: $authenticated</div><div class="line"></div><div class="line">  &apos;*&apos;:</div><div class="line">    # allow all users (including non-authenticated users) to read and</div><div class="line">    # publish all packages</div><div class="line">    #</div><div class="line">    # you can specify usernames/groupnames (depending on your auth plugin)</div><div class="line">    # and three keywords: &quot;$all&quot;, &quot;$anonymous&quot;, &quot;$authenticated&quot;</div><div class="line">    access: $all</div><div class="line"></div><div class="line">    # allow all known users to publish packages</div><div class="line">    # (anyone can register by default, remember?)</div><div class="line">    publish: $authenticated</div><div class="line"></div><div class="line">    # if package is not available locally, proxy requests to &apos;npmjs&apos; registry</div><div class="line">    proxy: npmjs</div><div class="line"></div><div class="line"># log settings</div><div class="line">logs:</div><div class="line">  - &#123;type: stdout, format: pretty, level: http&#125;</div><div class="line">  #- &#123;type: file, path: sinopia.log, level: info&#125;</div><div class="line"></div><div class="line"># you can specify listen address (or simply a port) </div><div class="line">listen: 0.0.0.0:4873  ////默认没有，只能在本机访问，添加后可以通过外网访问。（换为本机IP即可）</div></pre></td></tr></table></figure>
+<h2 id="部分配置字段意义"><a href="#部分配置字段意义" class="headerlink" title="部分配置字段意义"></a>部分配置字段意义</h2><p><font color="red"><strong>storage</strong></font> :仓库保存的路径</p>
+<p><font color="red"><strong>web</strong></font> : 是否支持WEB接口</p>
+<p><font color="red"><strong>auth</strong></font> : 验证相关</p>
+<p><font color="red"><strong>uplinks</strong></font> : 配置上游的npm服务器，主要是用于请求的仓库不存在时去上游服务器拉取</p>
+<p><font color="red"><strong>packages</strong></font> : 配置模块/包的发布(publish)、下载(access)的权限等</p>
+<p><font color="red"><strong>listen</strong></font> : 配置监听端口与主机名</p>
+<h2 id="packages配置"><a href="#packages配置" class="headerlink" title="packages配置"></a>packages配置</h2><p>配置大致分为两个部分，一个是以 @weflex/<em> 为开头的，另一个则是通配符 </em>。</p>
+<p>这个当然就是对 package.json 中的 name 字段进行匹配，比如 @weflex/app 将匹配第一个配置，而 express 则匹配第二个。</p>
+<p>这里这么配置的意义在于：一般团队或者公司的私有项目，会采用不同的权限控制，于是这里借用了 NPM 的 scoped name 即 @company 的形式，例如 @weflex/app 即表示 WeFlex 下属的 app 项目了。</p>
+<p>接下来，每一个命名过滤器(filter)下都有三项基本设置：</p>
+<ul>
+<li>access: 表示哪一类用户可以对匹配的项目进行安装(install)</li>
+<li>publish: 表示哪一类用户可以对匹配的项目进行发布(publish)</li>
+<li>proxy: 如其名，这里的值是对应于 uplinks 的</li>
+</ul>
+<p>对于1和2的值，我们通常有以下一些可选的配置：</p>
+<ul>
+<li>$all 表示所有人都可以执行对应的操作</li>
+<li>$authenticated 表示只有通过验证的人可以执行对应操作</li>
+<li>$anonymous 表示只有匿名者可以进行对应操作（通常无用）</li>
+</ul>
+<p>或者也可以指定对应于之前我们配置的用户表 htpasswd 中的一个或多个用户，这样就明确地指定哪些用户可以执行匹配的操作，再重启就可以了</p>
+<h2 id="客户端使用"><a href="#客户端使用" class="headerlink" title="客户端使用"></a>客户端使用</h2><p>强烈推荐使用nrm来管理自己的代理。</p>
+<blockquote>
+<p>$ nrm add <name> <a href="http://XXXXXX:4873" target="_blank" rel="external">http://XXXXXX:4873</a> # 添加本地的npm镜像地址</name></p>
+<p>$ nrm use <name> # 使用本址的镜像地址 </name></p>
+</blockquote>
+<p>&gt;</p>
+<p>nrm的其他命令：</p>
+<blockquote>
+<p>$ nrm –help  # 查看nrm命令帮助</p>
+<p>   $ nrm list # 列出可用的 npm 镜像地址</p>
+<p>  $ nrm use taobao # 使用<code>淘宝npm</code>镜像地址</p>
+</blockquote>
+<h2 id="创建用户与发布包"><a href="#创建用户与发布包" class="headerlink" title="创建用户与发布包"></a>创建用户与发布包</h2><p>创建新用户</p>
+<p>1.确保自己已经切换到配置的代理</p>
+<blockquote>
+<p> $ nrm ls<br>pm —- <a href="https://registry.npmjs.org/" target="_blank" rel="external">https://registry.npmjs.org/</a></p>
+<p>   cnpm — <a href="http://r.cnpmjs.org/" target="_blank" rel="external">http://r.cnpmjs.org/</a></p>
+<p>   taobao - <a href="http://registry.npm.taobao.org/" target="_blank" rel="external">http://registry.npm.taobao.org/</a></p>
+<p>   nj —– <a href="https://registry.nodejitsu.com/" target="_blank" rel="external">https://registry.nodejitsu.com/</a></p>
+<p>   rednpm - <a href="http://registry.mirror.cqupt.edu.cn" target="_blank" rel="external">http://registry.mirror.cqupt.edu.cn</a></p>
+<p>   npmMirror  <a href="https://skimdb.npmjs.com/registry" target="_blank" rel="external">https://skimdb.npmjs.com/registry</a></p>
+<p>   *&nbsp;sinopia  <a href="http://192.168.1.200:4873/" target="_blank" rel="external">http://192.168.1.200:4873/</a></p>
+</blockquote>
+<p>2.运行npm adduser,填写信息，注册账号。如果已经有账号，直接运行npm login即可。(<font color="red"><em>这时候一定要确定自己的npm的源在私服</em></font>)</p>
+<p>$ npm adduser</p>
+<blockquote>
+<p>Username: test</p>
+<p>   Password:</p>
+<p>   Email(this IS public)</p>
+</blockquote>
+<p>3.创建自己的组件</p>
+<p>4.在组件的根目录下进行 $ npm init ， 然后填写相关的信息就可以</p>
+<p>5.目录向上一层，运行$ npm publish \<packagename\> 发布新包。</packagename\></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2017/05/18/阿里RAP服务器搭建/" style="float: left;">
+        ← 阿里RAP服务器搭建
+    </a>
+    
+    
+    <a class="pull-right" href="/2017/03/28/react体会/">
+        react体会 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By TBEST. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/limenglin0717" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>
