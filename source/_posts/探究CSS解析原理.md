@@ -284,6 +284,8 @@ Good
 
 6.规范真的很重要，不仅仅是可读性，也许会影响你的页面性能。这里推荐一个 [CSS 规范](http://nec.netease.com/standard/css-sort.html)，可以参考一下。
 
+> 转载于[<font color="#ffaadd">Jartto's blog</font>](http://jartto.wang/2017/11/13/Exploring-the-principle-of-CSS-parsing/index.html?nsukey=iXHASULuDIGzymkvvYdxZWQ%2BVlVSsYwJmUU6Cv85KBz%2FYR7aGaoDZvsQpydtjSdOZ5mdF7EwDcf9YqD5gQFOGGqOg3duDLm54JQ1K8pWPS2HvP0rpK7nv04MWuzLV3tSna%2F1Jq57MFb7l3htdVs%2B8aHjit84gvcLnORjcnqF7kvXECphINJlv5EVGxBz5LWX)
+
 
 ![](./探究CSS解析原理/people.png "hello word")
 
