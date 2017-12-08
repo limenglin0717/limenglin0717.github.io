@@ -302,6 +302,9 @@
 <p>4.不到万不得已，不要使用 attribute selector，如：p[att1=”val1”]。这样的匹配非常慢。更不要这样写：p[id=”id1”]。这样将 id selector 退化成 attribute selector。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Bad  </span><br><span class="line">p[id=&quot;id1&quot;]&#123;color:red;&#125;  </span><br><span class="line">p[class=&quot;class1&quot;]&#123;color:red;&#125;  </span><br><span class="line">Good </span><br><span class="line">#id1&#123;color:red;&#125;  </span><br><span class="line">.class1&#123;color:red;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>5.理解依赖继承，如果某些属性可以继承，那么自然没有必要在写一遍；</p>
 <p>6.规范真的很重要，不仅仅是可读性，也许会影响你的页面性能。这里推荐一个 <a href="http://nec.netease.com/standard/css-sort.html" target="_blank" rel="noopener">CSS 规范</a>，可以参考一下。</p>
+<blockquote>
+<p>转载于<a href="http://jartto.wang/2017/11/13/Exploring-the-principle-of-CSS-parsing/index.html?nsukey=iXHASULuDIGzymkvvYdxZWQ%2BVlVSsYwJmUU6Cv85KBz%2FYR7aGaoDZvsQpydtjSdOZ5mdF7EwDcf9YqD5gQFOGGqOg3duDLm54JQ1K8pWPS2HvP0rpK7nv04MWuzLV3tSna%2F1Jq57MFb7l3htdVs%2B8aHjit84gvcLnORjcnqF7kvXECphINJlv5EVGxBz5LWX" target="_blank" rel="noopener"><font color="#ffaadd">Jartto’s blog</font></a></p>
+</blockquote>
 <p><img src="/2017/12/07/探究CSS解析原理/people.png" alt="" title="hello word"></p>
 
             <div class="clearfix"></div>

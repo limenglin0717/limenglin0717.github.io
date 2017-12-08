@@ -193,12 +193,12 @@
 <p>所以今天来教教大家如何搭建一个可视化的mock数据平台</p>
 <h2 id="重要内容"><a href="#重要内容" class="headerlink" title="重要内容"></a>重要内容</h2><p>安装前的准备：</p>
 <ul>
-<li><a href="https://www.mysql.com/downloads/" target="_blank" rel="external">MySql</a></li>
-<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">JDK</a></li>
-<li><a href="http://tomcat.apache.org/download-80.cgi" target="_blank" rel="external">tomcat</a></li>
-<li><a href="https://redis.io/download" target="_blank" rel="external">redis</a></li>
-<li><a href="https://github.com/thx/RAP/releases" target="_blank" rel="external">RAP包</a></li>
-<li><a href="http://rj.baidu.com/soft/detail/24312.html?ald" target="_blank" rel="external">navicat(<em>可选</em>)</a></li>
+<li><a href="https://www.mysql.com/downloads/" target="_blank" rel="noopener">MySql</a></li>
+<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">JDK</a></li>
+<li><a href="http://tomcat.apache.org/download-80.cgi" target="_blank" rel="noopener">tomcat</a></li>
+<li><a href="https://redis.io/download" target="_blank" rel="noopener">redis</a></li>
+<li><a href="https://github.com/thx/RAP/releases" target="_blank" rel="noopener">RAP包</a></li>
+<li><a href="http://rj.baidu.com/soft/detail/24312.html?ald" target="_blank" rel="noopener">navicat(<em>可选</em>)</a></li>
 </ul>
 <p>全部下载好这些我们就开始准备配置自己的mock数据平台了</p>
 <p><em>本文用的时 <strong>windows</strong> 系统，<strong>建议大家把这个装到 linux 上</strong></em></p>
@@ -206,14 +206,14 @@
 <li><p>这里JDK基本安装就不重复介绍了</p>
 </li>
 <li><p>MySql安装，基本都是一路next下去，没什么好说的</p>
-<p> 不会的同学，请出门右拐“<a href="https://www.baidu.com" target="_blank" rel="external"><em><font color="red">百度一下</font></em></a>”</p>
+<p> 不会的同学，请出门右拐“<a href="https://www.baidu.com" target="_blank" rel="noopener"><em><font color="red">百度一下</font></em></a>”</p>
 <blockquote>
-<p>偷偷告诉大家，JDK也可以偷偷懒，用<a href="https://chocolatey.org/" target="_blank" rel="external"><em>Chocolatey</em></a>进行自动安装配置</p>
+<p>偷偷告诉大家，JDK也可以偷偷懒，用<a href="https://chocolatey.org/" target="_blank" rel="noopener"><em>Chocolatey</em></a>进行自动安装配置</p>
 <p>要安装Chocolatey很容易，必须<strong>以管理员权限打开cmd.exe命令行提示</strong>，执行如下内容：</p>
 </blockquote>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@powershell -NoProfile -ExecutionPolicy Bypass -Command &quot;iex ((new-object net.webclient).DownloadString(&apos;https://chocolatey.org/install.ps1&apos;))&quot; &amp;&amp; SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@powershell -NoProfile -ExecutionPolicy Bypass -Command &quot;iex ((new-object net.webclient).DownloadString(&apos;https://chocolatey.org/install.ps1&apos;))&quot; &amp;&amp; SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin</span><br></pre></td></tr></table></figure>
 <p> 然后在输入安装命令，进行JDK8的自动安装：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">choco install jdk8</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">choco install jdk8</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>tomcat把他解压安装到自己喜欢的一个目录下，目录结构应该是这样的：</p>
 <p> <img src="/2017/05/18/阿里RAP服务器搭建/tomcatFile1.png" alt="" title="tomcat目录结构"></p>
@@ -238,14 +238,14 @@
 <p>requirepass <your_password></your_password></p>
 </blockquote>
 <p>   然后在该目录下运行cmd</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-server.exe redis.conf</div></pre></td></tr></table></figure>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-cli.exe -h 127.0.0.1 -p 6379</div></pre></td></tr></table></figure>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server.exe redis.conf</span><br></pre></td></tr></table></figure>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli.exe -h 127.0.0.1 -p 6379</span><br></pre></td></tr></table></figure>
 <p>   <img src="/2017/05/18/阿里RAP服务器搭建/cmd1.png" alt="" title="redis目录结构"></p>
 <p>   出现了这样的界面，说明你的redis安装成功了~！</p>
 </li>
 <li><p>RAP包下载<br> <img src="/2017/05/18/阿里RAP服务器搭建/rapDownload1.png" alt="" title="rapDownloadPng"></p>
 <p> 下载这个WAR包，然后修改里面的<em>src\main\resources\config.properties</em></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">jdbc.driverClassName=com.mysql.jdbc.Driver</div><div class="line">jdbc.url=jdbc\:mysql\://localhost\:3306/rap_db?useUnicode\=true&amp;characterEncoding\=utf8&amp;zeroDateTimeBehavior\=convertToNull&amp;noAccessToProcedureBodies\=true</div><div class="line">jdbc.username=root</div><div class="line">jdbc.password= &lt;your_mySql_password&gt;</div><div class="line">redis.host=localhost</div><div class="line">redis.port=6379</div><div class="line">redis.timeout=2000</div><div class="line">redis.password= &lt;your_redis_password&gt;</div><div class="line">redis.database=0</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">jdbc.driverClassName=com.mysql.jdbc.Driver</span><br><span class="line">jdbc.url=jdbc\:mysql\://localhost\:3306/rap_db?useUnicode\=true&amp;characterEncoding\=utf8&amp;zeroDateTimeBehavior\=convertToNull&amp;noAccessToProcedureBodies\=true</span><br><span class="line">jdbc.username=root</span><br><span class="line">jdbc.password= &lt;your_mySql_password&gt;</span><br><span class="line">redis.host=localhost</span><br><span class="line">redis.port=6379</span><br><span class="line">redis.timeout=2000</span><br><span class="line">redis.password= &lt;your_redis_password&gt;</span><br><span class="line">redis.database=0</span><br></pre></td></tr></table></figure>
 <p> 修改其中的 <em>your_mySql_password</em> 和 <em>your_redis_password</em> 为你自己设置的密码</p>
 <p> 然后把这个WAR包改名为ROOT.war，丢到tomcat的webapp的目录下（与ROOT文件同级）</p>
 <p> <img src="/2017/05/18/阿里RAP服务器搭建/war包1.png" alt="" title="war包"></p>
@@ -260,8 +260,8 @@
 <h2 id="深吸一口气"><a href="#深吸一口气" class="headerlink" title="深吸一口气"></a>深吸一口气</h2><p>万事俱备，让我们来一起见证我们的RAP平台吧</p>
 <p>要看到RAP平台，一共要打开三个服务。（前两个就是我们启用redis时的那两）</p>
 <p>进入redis的64bit文件，运行如下两句话（<em>一定要按顺序！</em>）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-server.exe redis.conf</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-cli.exe -h 127.0.0.1 -p 6379</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server.exe redis.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli.exe -h 127.0.0.1 -p 6379</span><br></pre></td></tr></table></figure>
 <p>再而进入到tomcat的安装目录下/bin文件中，双击startup.bat批处文件</p>
 <p>若不报错，这就成功的完成了RAP服务的搭建了~</p>
 <p>打开浏览器，访问 localhost:8080</p>
