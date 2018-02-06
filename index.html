@@ -90,6 +90,8 @@
 				    
 				    <li><a href="/categories/flux/" class="animsition-link">flux<small>(1)</small></a></li>
 				    
+				    <li><a href="/categories/js/" class="animsition-link">js<small>(1)</small></a></li>
+				    
 				    <li><a href="/categories/react/" class="animsition-link">react<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/前端安全/" class="animsition-link">前端安全<small>(1)</small></a></li>
@@ -195,6 +197,48 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/02/06/js隐式转换/">js隐式转换</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-02-06T06:37:52.000Z" itemprop="datePublished">
+          2018-02-06
+      </time>
+    
+    
+    | 
+    <a href='/tags/js/'>js</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        前言
+非常深入地讲解了包含隐式转换时js计算过程，全篇干货。本文由@keenjaan授权分享。
+
+本文由@仙人掌推荐分享
+
+正文从这里开始
+你有没有在面试中遇到特别奇葩的js隐形转换的面试题，第一反应是怎么会是这样呢？难以自信，js到底是怎么去计算得到结果，你是否有深入去了解其原理呢？下面将深入讲解其实现原理。
+其实这篇文章初稿三个月前就写好了，在我读一些源码库时，遇到了这些基础知识，想归档整理下，就有了这篇文章。由于一直忙没时间整理，
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/02/06/js隐式转换/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -562,44 +606,6 @@ XSS攻击前端主要的代码有三块：HTML, CSS, JavaScript.
                     
                     <p class="pull-right readMore">
                         <a href="/2017/02/06/前端安全那些事/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/01/26/JavaScript中的变量提升/">JavaScript中的变量提升</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-01-26T02:13:23.000Z" itemprop="datePublished">
-          2017-01-26
-      </time>
-    
-    
-    | 
-    <a href='/tags/JavaScript/'>JavaScript</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        我们先看一段很简单的Code：12var v=&apos;Hello World&apos;; alert(v); //没有疑问输出 &quot;Hello World&quot;
-这很简单。
-我们在看一段Code：12345var str=&apos;Hello World&apos;; ;(function()&#123;     alert(str); &#125;)()//弹出 &quot;Hello World&quot;
-经
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/01/26/JavaScript中的变量提升/">Read More...</a>
                     </p>
                     
                 </div>
