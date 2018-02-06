@@ -14,7 +14,7 @@ categories: JavaScript
 
 你有没有在面试中遇到特别奇葩的js隐形转换的面试题，第一反应是怎么会是这样呢？难以自信，js到底是怎么去计算得到结果，你是否有深入去了解其原理呢？下面将深入讲解其实现原理。
 
-```
+```bash
 const a = {
   i: 1,
   toString: function () {
@@ -34,13 +34,13 @@ js中有7种数据类型，可以分为两类：原始类型、对象类型：
 
 基础类型(原始值)：
 
-```
+```bash
 Undefined、 Null、 String、 Number、 Boolean、 Symbol (es6新出的，本文不讨论这种类型)
 ```
 
 复杂类型(对象值)：
 
-```
+```bash
 object
 ```
 
@@ -72,7 +72,7 @@ input是要转换的值，PreferredType是可选参数，可以是Number或Strin
 
 ### 2.1.1、如果PreferredType被标记为Number，则会进行下面的操作流程来转换输入的值。
 
-```
+```bash
 1、如果输入的值已经是一个原始值，则直接返回它
 2、否则，如果输入的值是一个对象，则调用该对象的valueOf()方法，
    如果valueOf()方法的返回值是一个原始值，则返回这个原始值。
@@ -82,7 +82,7 @@ input是要转换的值，PreferredType是可选参数，可以是Number或Strin
 
 ### 2.1.2、如果PreferredType被标记为String，则会进行下面的操作流程来转换输入的值。
 
-```
+```bash
 1、如果输入的值已经是一个原始值，则直接返回它
 2、否则，调用这个对象的toString()方法，如果toString()方法返回的是一个原始值，则返回这个原始值。
 3、否则，如果输入的值是一个对象，则调用该对象的valueOf()方法，
@@ -92,7 +92,7 @@ input是要转换的值，PreferredType是可选参数，可以是Number或Strin
 
 既然PreferredType是可选参数，那么如果没有这个参数时，怎么转换呢？PreferredType的值会按照这样的规则来自动设置：
 
-```
+```bash
 1、该对象为Date类型，则PreferredType被设置为String2、否则，PreferredType被设置为Number
 ```
 
@@ -104,7 +104,7 @@ input是要转换的值，PreferredType是可选参数，可以是Number或Strin
 
 1、Number、Boolean、String这三种构造函数生成的基础值的对象形式，通过valueOf转换后会变成相应的原始值。如：
 
-```
+```bash
 var num = newNumber('123');
 num.valueOf(); // 123var str = newString('12df');
 str.valueOf(); // '12df'var bool = newBoolean('fd');
@@ -113,14 +113,14 @@ bool.valueOf(); // true
 
 2、Date这种特殊的对象，其原型Date.prototype上内置的valueOf函数将日期转换为日期的毫秒的形式的数值。
 
-```
+```bash
 var a = newDate();
 a.valueOf(); // 1515143895500
 ```
 
 3、除此之外返回的都为this，即对象本身：(有问题欢迎告知)
 
-```
+```bash
 var a = newArray();
 a.valueOf() === a; // truevar b = newObject({});
 b.valueOf() === b; // true
@@ -130,19 +130,38 @@ b.valueOf() === b; // true
 
 1、Number、Boolean、String、Array、Date、RegExp、Function这几种构造函数生成的对象，通过toString转换后会变成相应的字符串的形式，因为这些构造函数上封装了自己的toString方法。如：
 
-```
-Number.prototype.hasOwnProperty('toString'); // trueBoolean.prototype.hasOwnProperty('toString'); // trueString.prototype.hasOwnProperty('toString'); // trueArray.prototype.hasOwnProperty('toString'); // trueDate.prototype.hasOwnProperty('toString'); // trueRegExp.prototype.hasOwnProperty('toString'); // trueFunction.prototype.hasOwnProperty('toString'); // truevar num = newNumber('123sd');
-num.toString(); // 'NaN'var str = newString('12df');
-str.toString(); // '12df'var bool = newBoolean('fd');
-bool.toString(); // 'true'var arr = newArray(1,2);
-arr.toString(); // '1,2'var d = newDate();
-d.toString(); // "Wed Oct 11 2017 08:00:00 GMT+0800 (中国标准时间)"var func = function () {}
+```bash
+Number.prototype.hasOwnProperty('toString'); // true
+Boolean.prototype.hasOwnProperty('toString'); // true
+String.prototype.hasOwnProperty('toString'); // true
+Array.prototype.hasOwnProperty('toString'); // true
+Date.prototype.hasOwnProperty('toString'); // true
+RegExp.prototype.hasOwnProperty('toString'); // true
+Function.prototype.hasOwnProperty('toString'); // true
+
+var num = new Number('123sd');
+num.toString(); // 'NaN'
+
+var str = new String('12df');
+str.toString(); // '12df'
+
+var bool = new Boolean('fd');
+bool.toString(); // 'true'
+
+var arr = new Array(1,2);
+arr.toString(); // '1,2'
+
+var d = new Date();
+d.toString(); // "Wed Oct 11 2017 08:00:00 GMT+0800 (中国标准时间)"
+
+var func = function () {}
 func.toString(); // "function () {}"
+
 ```
 
 除这些对象及其实例化对象之外，其他对象返回的都是该对象的类型，(有问题欢迎告知)，都是继承的Object.prototype.toString方法。
 
-```
+```bash
 var obj = newObject({});
 obj.toString(); // "[object Object]"Math.toString(); // "[object Math]"
 ```
@@ -171,7 +190,7 @@ PreferredType没有设置时，Date类型的对象，PreferredType默认设置�
 
 讲了这么多，是不是还不是很清晰，先来看看一个例子：
 
-```
+```bash
 ({} + {}) = ?
 两个对象的值进行+运算符，肯定要先进行隐式转换为原始类型才能进行计算。
 1、进行ToPrimitive转换，由于没有指定PreferredType类型，{}会使默认值为Number，进行ToPrimitive(input, Number)运算。
@@ -182,7 +201,7 @@ PreferredType没有设置时，Date类型的对象，PreferredType默认设置�
 
 再来一个指定类型的例子：
 
-```
+```bash
 2 * {} = ?
 1、首先*运算符只能对number类型进行运算，故第一步就是对{}进行ToNumber类型转换。
 2、由于{}是对象类型，故先进行原始类型转换，ToPrimitive(input, Number)运算。
@@ -196,7 +215,7 @@ PreferredType没有设置时，Date类型的对象，PreferredType默认设置�
 
 **== 运算符的规则规律性不是那么强，按照下面流程来执行,es5文档**
 
-```
+```bash
 比较运算 x==y, 其中 x 和 y 是值，返回 true 或者 false。这样的比较按如下方式进行：
 1、若 Type(x) 与 Type(y) 相同， 则
 
@@ -243,7 +262,7 @@ PreferredType没有设置时，Date类型的对象，PreferredType默认设置�
 
 所以类型不相同时，可以会进行上面几条的比较，比如：
 
-```
+```bash
 var a = {
   valueOf: function () {
      return1;
@@ -261,7 +280,7 @@ true == a // true;
 
 我们再看一段很复杂的比较，如下：
 
-```
+```bash
 [] == !{}
 //1、! 运算符优先级高于==，故先进行！运算。
 2、!{}运算结果为false，结果变成 [] == false比较。
@@ -273,9 +292,10 @@ true == a // true;
 5、根据上面第5条，等式左边x = ToNumber('') = 0。
    所以结果变为： 0 == 0，返回true，比较结束。
 ```
+
 最后我们看看文章开头说的那道题目：
 
-```
+```bash
 const a = {
   i: 1,
   toString: function () {
