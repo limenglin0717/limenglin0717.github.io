@@ -180,27 +180,28 @@ PreferredType没有设置时，Date类型的对象，PreferredType默认设置�
 
 根据参数类型进行下面转换：
 
-参数 | 结果
-| - | - |
-undefined | NaN
-null | +0
-布尔值 | true转换1，false转换为+0
-数字 | 无须转换
-字符串 | 有字符串解析为数字，例如：‘324’转换为324，‘qwer’转换为NaN
-对象(obj) | 先进行 ToPrimitive(obj, Number)转换得到原始值，在进行ToNumber转换为数字
+| 参数 | 结果 |
+|:-----|:-----|
+| undefined | NaN |
+| null | +0 |
+| 布尔值 | true转换1，false转换为+0 |
+| 数字 | 无须转换 |
+| 字符串 | 有字符串解析为数字，例如：‘324’转换为324，‘qwer’转换为NaN |
+| 对象(obj) | 先进行 ToPrimitive(obj, Number)转换得到原始值，在进行ToNumber转换为数字 |
 
 ## 2.3、通过ToString将值转换为字符串
 
 根据参数类型进行下面转换：
 
-参数 | 结果
-| - | - |
-undefined | 'undefined'
-null | 'null'
-布尔值 | 转换为'true'或'false'
-数字 | 数字转换字符串，比如：1.765转为'1.765'
-字符串 | 无需转换
-对象(obj) | 先进行 ToPrimitive(obj, String)转换得到原始值，在进行ToString转换为字符串
+| 参数 | 结果 |
+|:-----|:-----|
+| undefined | 'undefined' |
+| null | 'null' |
+| 布尔值 | 转换为'true'或'false' |
+| 数字 | 数字转换字符串，比如：1.765转为'1.765' |
+| 字符串 | 无需转换 |
+| 对象(obj) | 先进行 ToPrimitive(obj, String)转换得到原始值，在进行ToString转换为字符串 |
+
 讲了这么多，是不是还不是很清晰，先来看看一个例子：
 
 ```bash
