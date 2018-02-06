@@ -5,18 +5,18 @@
     
   <url>
     <loc>https://limenglin0717.github.io/2018/02/06/js%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2/</loc>
-    <lastmod>2018-02-06T06:52:59.000Z</lastmod>
+    <lastmod>2018-02-06T09:59:41.000Z</lastmod>
     <data>
         <display>
         <title>js隐式转换</title>
         <pubTime>2018-02-06T06:37:52.000Z</pubTime>
         
-        <tag>js</tag>
+        <tag>JavaScript</tag>
          
          
            
              
-              <breadCrumb title="js" url="https://limenglin0717.github.io/categories/js/"/>
+              <breadCrumb title="JavaScript" url="https://limenglin0717.github.io/categories/JavaScript/"/>
           
         </display>
     </data>
@@ -164,6 +164,46 @@
 
     
   <url>
+    <loc>https://limenglin0717.github.io/2017/01/25/canvas%E9%AA%8C%E8%AF%81%E7%A0%81/</loc>
+    <lastmod>2017-12-17T14:15:57.722Z</lastmod>
+    <data>
+        <display>
+        <title>canvas验证码</title>
+        <pubTime>2017-01-25T06:45:15.000Z</pubTime>
+        
+        <tag>canvas</tag>
+         
+         
+           
+             
+              <breadCrumb title="canvas" url="https://limenglin0717.github.io/categories/canvas/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://limenglin0717.github.io/2017/01/26/JavaScript%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87/</loc>
+    <lastmod>2017-12-17T14:15:57.722Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript中的变量提升</title>
+        <pubTime>2017-01-26T02:13:23.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="https://limenglin0717.github.io/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://limenglin0717.github.io/2016/09/21/es6%E4%B8%AD%E7%9A%84%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2017-12-17T14:15:57.722Z</lastmod>
     <data>
@@ -197,46 +237,6 @@
            
              
               <breadCrumb title="JavaScript" url="https://limenglin0717.github.io/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://limenglin0717.github.io/2017/01/26/JavaScript%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87/</loc>
-    <lastmod>2017-12-17T14:15:57.722Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript中的变量提升</title>
-        <pubTime>2017-01-26T02:13:23.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="https://limenglin0717.github.io/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://limenglin0717.github.io/2017/01/25/canvas%E9%AA%8C%E8%AF%81%E7%A0%81/</loc>
-    <lastmod>2017-12-17T14:15:57.722Z</lastmod>
-    <data>
-        <display>
-        <title>canvas验证码</title>
-        <pubTime>2017-01-25T06:45:15.000Z</pubTime>
-        
-        <tag>canvas</tag>
-         
-         
-           
-             
-              <breadCrumb title="canvas" url="https://limenglin0717.github.io/categories/canvas/"/>
           
         </display>
     </data>
