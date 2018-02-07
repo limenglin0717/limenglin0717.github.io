@@ -66,7 +66,9 @@ js中一个难点就是js隐形转换，因为js在一些操作符下其类型�
 
 js引擎内部的抽象操作ToPrimitive有着这样的签名：
 
+```bash
 ToPrimitive(input, PreferredType?)
+```
 
 input是要转换的值，PreferredType是可选参数，可以是Number或String类型。他只是一个转换标志，转化后的结果并不一定是这个参数所值的类型，但是转换结果一定是一个原始值（或者报错）。
 
@@ -74,8 +76,7 @@ input是要转换的值，PreferredType是可选参数，可以是Number或Strin
 
 ```bash
 1、如果输入的值已经是一个原始值，则直接返回它
-2、否则，如果输入的值是一个对象，则调用该对象的valueOf()方法，
-   如果valueOf()方法的返回值是一个原始值，则返回这个原始值。
+2、否则，如果输入的值是一个对象，则调用该对象的valueOf()方法，如果valueOf()方法的返回值是一个原始值，则返回这个原始值。
 3、否则，调用这个对象的toString()方法，如果toString()方法返回的是一个原始值，则返回这个原始值。
 4、否则，抛出TypeError异常。
 ```
@@ -85,15 +86,15 @@ input是要转换的值，PreferredType是可选参数，可以是Number或Strin
 ```bash
 1、如果输入的值已经是一个原始值，则直接返回它
 2、否则，调用这个对象的toString()方法，如果toString()方法返回的是一个原始值，则返回这个原始值。
-3、否则，如果输入的值是一个对象，则调用该对象的valueOf()方法，
-   如果valueOf()方法的返回值是一个原始值，则返回这个原始值。
+3、否则，如果输入的值是一个对象，则调用该对象的valueOf()方法，如果valueOf()方法的返回值是一个原始值，则返回这个原始值。
 4、否则，抛出TypeError异常。
 ```
 
 既然PreferredType是可选参数，那么如果没有这个参数时，怎么转换呢？PreferredType的值会按照这样的规则来自动设置：
 
 ```bash
-1、该对象为Date类型，则PreferredType被设置为String2、否则，PreferredType被设置为Number
+1、该对象为Date类型，则PreferredType被设置为String
+2、否则，PreferredType被设置为Number
 ```
 
 ### 2.1.3、valueOf方法和toString方法解析
@@ -106,8 +107,10 @@ input是要转换的值，PreferredType是可选参数，可以是Number或Strin
 
 ```bash
 var num = newNumber('123');
-num.valueOf(); // 123var str = newString('12df');
-str.valueOf(); // '12df'var bool = newBoolean('fd');
+num.valueOf(); //  123
+var str = newString('12df');
+str.valueOf(); // '12df'
+var bool = newBoolean('fd');
 bool.valueOf(); // true
 ```
 
@@ -122,7 +125,8 @@ a.valueOf(); // 1515143895500
 
 ```bash
 var a = newArray();
-a.valueOf() === a; // truevar b = newObject({});
+a.valueOf() === a; // true
+var b = newObject({});
 b.valueOf() === b; // true
 ```
 
@@ -163,7 +167,8 @@ func.toString(); // "function () {}"
 
 ```bash
 var obj = newObject({});
-obj.toString(); // "[object Object]"Math.toString(); // "[object Math]"
+obj.toString(); // "[object Object]"
+Math.toString(); // "[object Math]"
 ```
 
 从上面valueOf和toString两个函数对对象的转换可以看出为什么对于ToPrimitive(input, PreferredType?)，PreferredType没有设定的时候，除了Date类型，PreferredType被设置为String，其它的会设置成Number。
@@ -286,11 +291,12 @@ var a = {
   }
 }
 true == a // true;
+```
+
 首先，x与y类型不同，x为boolean类型，则进行ToNumber转换为1,为number类型。
 接着，x为number，y为object类型，对y进行原始转换，ToPrimitive(a, ?),没有指定转换类型，默认number类型。
 而后，ToPrimitive(a, Number)首先调用valueOf方法，返回1，得到原始类型1。
 最后 1 == 1， 返回true。
-```
 
 我们再看一段很复杂的比较，如下：
 
@@ -300,7 +306,7 @@ true == a // true;
 2、!{}运算结果为false，结果变成 [] == false比较。
 3、根据上面第7条，等式右边y = ToNumber(false) = 0。结果变成 [] == 0。
 4、按照上面第9条，比较变成ToPrimitive([]) == 0。
-    按照上面规则进行原始值转换，[]会先调用valueOf函数，返回this。
+   按照上面规则进行原始值转换，[]会先调用valueOf函数，返回this。
    不是原始值，继续调用toString方法，x = [].toString() = ''。
    故结果为 '' == 0比较。
 5、根据上面第5条，等式左边x = ToNumber('') = 0。
