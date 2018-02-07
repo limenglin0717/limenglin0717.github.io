@@ -224,7 +224,7 @@
 
 正文从这里开始
 你有没有在面试中遇到特别奇葩的js隐形转换的面试题，第一反应是怎么会是这样呢？难以自信，js到底是怎么去计算得到结果，你是否有深入去了解其原理呢？下面将深入讲解其实现原理。
-123456789const a = &#123;  i: 1,  toString: function () &#123; 
+const a = &#123;  i: 1,  toString: function () &#123;    return
                       
                     </p>
                     
@@ -304,7 +304,7 @@
 对于js的继承，平时写的真的少，而且基本没有写过多少复杂的继承类型，加上js继承的复杂性，所以在这里记录一下
 ok，看这篇短文的两个重要的目的——ES5和ES6中的继承
 ES5 的继承
-123456789101112function Super() &#123;&#125; function Sub() &#123;&#125;Sub.prototype = new Super();Sub.prototype.c
+function Super() &#123;&#125; function Sub() &#123;&#125;Sub.prototype = new Super();Sub.prototype.constructor = Su
                       
                     </p>
                     
@@ -342,7 +342,7 @@ ES5 的继承
                         Mobx是一个在redux之后出来的状态管理库，它比redux更清楚而且更易上手，因为redux在我看来繁杂，难受,而mobx简直是短小精悍啊！！！
 那mobx的思想是什么呢？他只做一件事： Action ===&gt; State ===&gt; Views
 这篇文章主要是mobx起步的代码实现
-安装依赖和配置.babelrc123456npm install mobx --savenpm install mobx-react --s
+安装依赖和配置.babelrcnpm install mobx --savenpm install mobx-react --savenpm
                       
                     </p>
                     
@@ -598,7 +598,7 @@ index.js是写关于组件的结构代码（re
                         在网上很多人都担心安全问题，我的账号为什么被盗了，我的信息怎么会泄露呢？
 下面我们来分类简单让大家了解下：
 XSS攻击前端主要的代码有三块：HTML, CSS, JavaScript.
-而XSS攻击jiu是JavaScript脚本注入，举个例子：1234567891011121314151617181920212223&lt;?php    $username=&quot;侯医生&quot;;?&gt;&lt;!DOCYTPE HTML
+而XSS攻击jiu是JavaScript脚本注入，举个例子：&lt;?php    $username=&quot;侯医生&quot;;?&gt;&lt;!DOCYTPE HTML&gt;&lt;html&gt;    &lt;head&gt;     
                       
                     </p>
                     
